@@ -1,0 +1,38 @@
+---
+Title: Hello from Aardvark 2s
+Description: This is the first Aardvark blog post
+Author: Aardvark Platform Team 2
+Date: 2018-06-27
+Robots: noindex,nofollow
+Template: post
+---
+# Aardvark 2
+This simple blog engine works right out of the box and its use couldn't be simpler.
+
+![logo](http://aardvark.awx.at/themes/default/img/aardvark.svg "This is Aardvark")
+
+Image embedding works easy too
+
+ I   	| am  	| a  	| table 
+ --- 	| --- 	| --- 	| ---
+ 1 		| 2  	| 3		| 4    
+ 
+as the [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables) states:
+> Tables aren't part of the core Markdown spec, but they are part of GFM and Markdown Here supports them. They are an easy way of adding tables to your email -- a task that would otherwise require copy-pasting from another application.
+ 
+## Code
+Code can be easily embedded but sadly F# syntax highlighting doesn't work
+```fsharp
+let funny (a : int) =
+	a * 2
+
+```
+
+```javascript
+var funny = function(a) {
+	return a * 2;
+};
+
+```
+
+There's a plugin [PicoSyntaxHighLighter](https://github.com/bricebou/PicoSyntaxHighlighter) that should solve this problem.
