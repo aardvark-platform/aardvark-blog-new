@@ -8,5 +8,5 @@ Template: post
 ---
 # Colloborative editing of transfer functions
 
-Aardvark.Media subapps allow fine-grained control for multi client user interfaces.
+Aardvark.Media subapps allow fine-grained control for multi client user-interfaces.
 [embed "https://youtu.be/TJ5GuPlCLMA"].
