@@ -1,0 +1,6 @@
+##
+# Basic
+#
+site_title: Aardvark Blog           # The title of your website
+                                    #     Example: http://example.com/pico/
+timezone: UTC                       # Your PHP installation might require you to manually specify a timezone
