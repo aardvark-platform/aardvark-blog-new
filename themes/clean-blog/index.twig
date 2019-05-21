@@ -100,13 +100,13 @@
                 <ul class="pager">
 					{% if page_number > 1 %}
 					<li class="previous">
-                        <a href="{{ base_url }}/{{ page_indicator }}/{{ page_number - 1 }}">&larr; Newer Posts</a>
+                        <a href="{{ base_url }}/?{{ page_indicator }}={{ page_number - 1 }}">&larr; Newer Posts</a>
                     </li>
 					{% endif %}
 					
 					{% if page_number < total_pages %} 
                     <li class="next">
-                        <a href="{{ base_url }}/{{ page_indicator }}/{{ page_number + 1 }}">Older Posts &rarr;</a>
+                        <a href="{{ base_url }}/?{{ page_indicator }}={{ page_number + 1 }}">Older Posts &rarr;</a>
                     </li>
 					{% endif %}
                 </ul>

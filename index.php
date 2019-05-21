@@ -25,7 +25,7 @@ $config['pages_order'] = 'desc';
 $config['author'] = 'Your Name';
 $config['facebook'] = 'https://www.facebook.com/YourPage';
 $config['twitter'] = '@username';
-$config['pagination_limit'] = 4;
+$config['pagination_limit'] = 8;
 
 
 // instance Pico
