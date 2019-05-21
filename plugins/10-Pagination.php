@@ -102,11 +102,11 @@ class Pagination extends AbstractPicoPlugin {
 		$twigVariables['next_page_link'] = $twigVariables['prev_page_link'] = '';
 		$pagination_parts = array();
 		if ($this->page_number > 1) {
-			$prev_path = $this->getBaseUrl() . '/' . $this->config['page_indicator'] . '/' . ($this->page_number - 1);
+			$prev_path = $this->getBaseUrl() . '/?' . $this->config['page_indicator'] . '=' . ($this->page_number - 1);
 			$pagination_parts['prev_link'] = $twigVariables['prev_page_link'] = '<a href="' . $prev_path . '" id="prev_page_link">' . $this->config['prev_text'] . '</a>';
 		}
 		if ($this->page_number < $this->total_pages) {
-			$next_path = $this->getBaseUrl() . '/' . $this->config['page_indicator'] . '/' . ($this->page_number + 1);
+			$next_path = $this->getBaseUrl() . '/?' . $this->config['page_indicator'] . '=' . ($this->page_number + 1);
 			$pagination_parts['next_link'] = $twigVariables['next_page_link'] = '<a href="' . $next_path . '" id="next_page_link">' . $this->config['next_text'] . '</a>';
 		}
 
@@ -127,12 +127,16 @@ class Pagination extends AbstractPicoPlugin {
 	}
 
 	public function onRequestUrl(&$url)
-	{
+	{	
+		$r = $_SERVER['REQUEST_URI'];
 		// checks for page # in URL
-		$pattern = '/' . $this->config['page_indicator'] . '\/[0-9]*$/';
-		if (preg_match($pattern, $url)) {
-			$page_numbers = explode('/', $url);
-			$page_number = $page_numbers[count($page_numbers)-1];
+		$pattern = '/.*\/\?page=([0-9]+).*/';
+		//$arr = preg_match($pattern,'sepp.com/?page=4', $matches);
+		//var_dump($matches);
+		//die($matches);
+		if (preg_match($pattern, $r, $matches)) {
+			$page_number = $matches[1];
+			
 			$this->page_number = $page_number;
 			if ($this->config['sub_page']) {
 				$url = $this->config['page_indicator'];
